@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { contactsData } from '../data/campusData';
 import { ContactDepartment } from '../types';
+import { campusImages } from '../assets/images';
 
 interface ContactPageProps {
   onSelectContact: (contact: ContactDepartment) => void;
@@ -98,7 +99,21 @@ export const ContactPage: React.FC<ContactPageProps> = ({
       </div>
 
       {/* Interactive Problem Routing Section */}
-      <div className="rounded-2xl border border-indigo-500/30 bg-gradient-to-b from-indigo-950/40 via-slate-900/90 to-slate-900/90 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+      <div className="relative overflow-hidden rounded-2xl border border-indigo-500/30 bg-gradient-to-b from-indigo-950/40 via-slate-900/90 to-slate-900/90 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+        {/* Subtle student helpdesk photo backdrop */}
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          <img
+            src={campusImages.studentHelpdesk}
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-cover opacity-10 mix-blend-luminosity filter blur-[0.5px]"
+            onError={(e) => {
+              (e.target as HTMLElement).style.display = 'none';
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/95 via-slate-900/85 to-slate-900/95" />
+        </div>
+
         <div className="max-w-3xl mx-auto space-y-4">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-300">
             <Sparkles className="h-4 w-4 text-indigo-400" />

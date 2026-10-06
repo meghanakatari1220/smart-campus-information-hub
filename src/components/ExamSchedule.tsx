@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { examsData } from '../data/campusData';
 import { ExamItem } from '../types';
+import { campusImages } from '../assets/images';
 
 interface ExamScheduleProps {
   onViewAllExams?: () => void;
@@ -83,6 +84,20 @@ export const ExamSchedule: React.FC<ExamScheduleProps> = ({
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Featured Countdown Box */}
         <div className="relative overflow-hidden rounded-2xl border border-indigo-500/30 bg-gradient-to-b from-indigo-950/40 via-slate-900/90 to-slate-900/90 p-6 backdrop-blur-md shadow-xl lg:col-span-1 flex flex-col justify-between">
+          {/* Subtle examination hall photo backdrop */}
+          <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+            <img
+              src={campusImages.academicExamHall}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover opacity-10 mix-blend-luminosity filter blur-[0.5px]"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/80 to-transparent" />
+          </div>
+
           <div className="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full bg-indigo-500/15 blur-2xl" />
 
           <div>

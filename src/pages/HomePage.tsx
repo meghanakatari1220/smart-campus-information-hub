@@ -8,6 +8,7 @@ import { ExamSchedule } from '../components/ExamSchedule';
 import { ImportantInfoCards } from '../components/ImportantInfoCards';
 import { noticesData, eventsData } from '../data/campusData';
 import { ActiveTab, NoticeItem, CampusEvent, ExamItem } from '../types';
+import { campusImages } from '../assets/images';
 
 interface HomePageProps {
   onSearch: (query: string) => void;
@@ -114,7 +115,21 @@ export const HomePage: React.FC<HomePageProps> = ({
         <ImportantInfoCards onNavigate={onNavigate} />
 
         {/* 7. Presentation Proof / Verification Banner */}
-        <section className="rounded-2xl border border-indigo-500/20 bg-gradient-to-r from-indigo-950/30 via-slate-900/60 to-purple-950/20 p-6 sm:p-8 backdrop-blur-md">
+        <section className="relative overflow-hidden rounded-2xl border border-indigo-500/20 bg-gradient-to-r from-indigo-950/30 via-slate-900/60 to-purple-950/20 p-6 sm:p-8 backdrop-blur-md">
+          {/* Subtle collegiate study backdrop */}
+          <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+            <img
+              src={campusImages.campusLibraryStudy}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover opacity-10 mix-blend-luminosity filter blur-[0.5px]"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/90 to-slate-900/80" />
+          </div>
+
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-start gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400">

@@ -9,6 +9,7 @@ import {
   TrendingUp,
 } from 'lucide-react';
 import { ActiveTab } from '../types';
+import { campusImages } from '../assets/images';
 
 interface HeroProps {
   onSearch: (query: string) => void;
@@ -54,6 +55,20 @@ export const Hero: React.FC<HeroProps> = ({ onSearch, onExploreNotices }) => {
         className="pointer-events-none absolute top-1/3 -right-20 -z-10 h-80 w-80 rounded-full bg-purple-600/10 blur-2xl"
         aria-hidden="true"
       />
+
+      {/* Subtle architectural campus backdrop */}
+      <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden">
+        <img
+          src={campusImages.heroCampusHub}
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full object-cover object-top opacity-10 mix-blend-luminosity filter blur-[0.5px]"
+          onError={(e) => {
+            (e.target as HTMLElement).style.display = 'none';
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b0f17]/60 via-[#0b0f17]/90 to-[#0b0f17]" />
+      </div>
 
       {/* Subtle architectural grid pattern */}
       <div

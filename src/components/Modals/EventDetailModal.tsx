@@ -50,6 +50,10 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({
             alt={event.title}
             referrerPolicy="no-referrer"
             className="h-full w-full object-cover"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src =
+                'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300"><rect width="100%" height="100%" fill="%230f172a"/><text x="50%" y="50%" fill="%2364748b" font-family="sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle">Campus Event Banner</text></svg>';
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0d131f] via-[#0d131f]/40 to-black/30" />
 

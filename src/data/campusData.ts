@@ -1,4 +1,5 @@
 import { NoticeItem, CampusEvent, ExamItem, DocumentItem, ContactDepartment } from '../types';
+import { campusImages } from '../assets/images';
 
 export const noticesData: NoticeItem[] = [
   {
@@ -152,7 +153,7 @@ export const eventsData: CampusEvent[] = [
     eligibility: 'All undergraduate and postgraduate engineering students (Teams of 2 to 4)',
     registrationDeadline: 'Oct 22, 2026',
     registrationStatus: 'Open',
-    bannerImage: '/src/assets/images/event_symposium_1791264671774.jpg',
+    bannerImage: campusImages.eventSymposium,
     tags: ['Coding', 'Algorithms', 'Hackathon', 'Cash Prize'],
   },
   {
@@ -167,7 +168,7 @@ export const eventsData: CampusEvent[] = [
     eligibility: 'Open to all college students nationwide',
     registrationDeadline: 'Nov 01, 2026',
     registrationStatus: 'Open',
-    bannerImage: '/src/assets/images/event_hackathon_1791264660545.jpg',
+    bannerImage: campusImages.eventHackathon,
     tags: ['Hackathon', 'Web Dev', 'AI Systems', 'Hardware'],
   },
   {
@@ -182,7 +183,7 @@ export const eventsData: CampusEvent[] = [
     eligibility: 'Individual participants or 2-member teams',
     registrationDeadline: 'Oct 21, 2026',
     registrationStatus: 'Closing Soon',
-    bannerImage: '/src/assets/images/event_symposium_1791264671774.jpg',
+    bannerImage: campusImages.eventQuizChampionship,
     tags: ['Quiz', 'IEEE', 'Trivia', 'Trophies'],
   },
   {
@@ -197,7 +198,7 @@ export const eventsData: CampusEvent[] = [
     eligibility: 'All students with basic C++, Java, or Python knowledge',
     registrationDeadline: 'Oct 29, 2026',
     registrationStatus: 'Open',
-    bannerImage: '/src/assets/images/event_hackathon_1791264660545.jpg',
+    bannerImage: campusImages.eventCodingBlitz,
     tags: ['Algorithms', 'ICPC', 'Competitive Programming'],
   },
   {
@@ -212,7 +213,7 @@ export const eventsData: CampusEvent[] = [
     eligibility: 'All registered college students (Capacity limited to 120 seats)',
     registrationDeadline: 'Nov 06, 2026',
     registrationStatus: 'Open',
-    bannerImage: '/src/assets/images/hero_campus_hub_1791264646595.jpg',
+    bannerImage: campusImages.eventAiWorkshop,
     tags: ['Workshop', 'Cloud', 'FullStack', 'Hands-on'],
   },
 ];

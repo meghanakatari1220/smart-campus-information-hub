@@ -22,6 +22,7 @@ import {
 } from '../data/campusData';
 import { DocumentItem, CampusEvent, ExamItem } from '../types';
 import { EventCard } from '../components/EventCard';
+import { campusImages } from '../assets/images';
 
 interface InformationPageProps {
   initialSection?: string;
@@ -107,7 +108,21 @@ export const InformationPage: React.FC<InformationPageProps> = ({
       {activeSection === 'Academics' && (
         <div className="space-y-8">
           {/* Academic Calendar Grid */}
-          <div className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 backdrop-blur-sm space-y-4">
+          <div className="relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 backdrop-blur-sm space-y-4">
+            {/* Subtle collegiate library backdrop */}
+            <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+              <img
+                src={campusImages.campusLibraryStudy}
+                alt=""
+                aria-hidden="true"
+                className="h-full w-full object-cover opacity-10 mix-blend-luminosity filter blur-[0.5px]"
+                onError={(e) => {
+                  (e.target as HTMLElement).style.display = 'none';
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-900/95" />
+            </div>
+
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-base font-bold text-white flex items-center gap-2">
@@ -175,7 +190,21 @@ export const InformationPage: React.FC<InformationPageProps> = ({
       {activeSection === 'Fees & Scholarships' && (
         <div className="space-y-8">
           {/* Fee Payment Guidelines */}
-          <div className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 backdrop-blur-sm space-y-4">
+          <div className="relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 backdrop-blur-sm space-y-4">
+            {/* Subtle scholarship & finance support backdrop */}
+            <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+              <img
+                src={campusImages.scholarshipSupport}
+                alt=""
+                aria-hidden="true"
+                className="h-full w-full object-cover opacity-10 mix-blend-luminosity filter blur-[0.5px]"
+                onError={(e) => {
+                  (e.target as HTMLElement).style.display = 'none';
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-900/95" />
+            </div>
+
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-800 pb-3">
               <div>
                 <h3 className="text-base font-bold text-white">

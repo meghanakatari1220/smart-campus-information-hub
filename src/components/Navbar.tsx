@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { ActiveTab, NoticeItem } from '../types';
 import { noticesData } from '../data/campusData';
+import { campusImages } from '../assets/images';
 
 interface NavbarProps {
   activeTab: ActiveTab;
@@ -180,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Student profile"
             >
               <img
-                src="/src/assets/images/avatar_student_1791264681726.jpg"
+                src={campusImages.avatarStudent}
                 alt="Student Profile"
                 referrerPolicy="no-referrer"
                 className="h-8 w-8 rounded-full object-cover"
@@ -196,7 +197,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="absolute right-0 mt-2 w-72 rounded-xl border border-slate-800 bg-slate-900/95 p-4 shadow-2xl backdrop-blur-xl z-50">
                 <div className="flex items-center gap-3 pb-3 border-b border-slate-800">
                   <img
-                    src="/src/assets/images/avatar_student_1791264681726.jpg"
+                    src={campusImages.avatarStudent}
                     alt="Alex Rivera"
                     referrerPolicy="no-referrer"
                     className="h-10 w-10 rounded-full object-cover ring-1 ring-indigo-500/40"
