@@ -2,5 +2,7 @@
   "name": "Smart Campus Information Hub",
   "description": "Unified, searchable campus intelligence platform for announcements, exam timetables, scholarships, academic notices, forms, and verified department contacts.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
